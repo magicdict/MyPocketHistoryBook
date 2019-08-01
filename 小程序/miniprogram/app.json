@@ -1,8 +1,21 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/treasure/treasure",
     "pages/logs/logs"
   ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/treasure/treasure",
+        "text": "宝库"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "日志"
+      }
+    ]
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

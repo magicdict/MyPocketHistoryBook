@@ -1,0 +1,124 @@
+2019-08-01T14:03:38.498+0800 I CONTROL  [main] ***** SERVER RESTARTED *****
+2019-08-01T14:03:38.504+0800 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
+2019-08-01T14:03:39.052+0800 I CONTROL  [initandlisten] MongoDB starting : pid=20100 port=27017 dbpath=/var/lib/mongo 64-bit host=iz2ze3gye2rcpmb3oc12r2z
+2019-08-01T14:03:39.052+0800 I CONTROL  [initandlisten] db version v4.0.11
+2019-08-01T14:03:39.052+0800 I CONTROL  [initandlisten] git version: 417d1a712e9f040d54beca8e4943edce218e9a8c
+2019-08-01T14:03:39.052+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e-fips 11 Feb 2013
+2019-08-01T14:03:39.052+0800 I CONTROL  [initandlisten] allocator: tcmalloc
+2019-08-01T14:03:39.052+0800 I CONTROL  [initandlisten] modules: none
+2019-08-01T14:03:39.052+0800 I CONTROL  [initandlisten] build environment:
+2019-08-01T14:03:39.052+0800 I CONTROL  [initandlisten]     distmod: rhel70
+2019-08-01T14:03:39.052+0800 I CONTROL  [initandlisten]     distarch: x86_64
+2019-08-01T14:03:39.052+0800 I CONTROL  [initandlisten]     target_arch: x86_64
+2019-08-01T14:03:39.052+0800 I CONTROL  [initandlisten] options: { config: "/etc/mongod.conf", net: { bindIp: "0.0.0.0", port: 27017 }, processManagement: { fork: true, pidFilePath: "/var/run/mongodb/mongod.pid", timeZoneInfo: "/usr/share/zoneinfo" }, storage: { dbPath: "/var/lib/mongo", journal: { enabled: true } }, systemLog: { destination: "file", logAppend: true, path: "/var/log/mongodb/mongod.log" } }
+2019-08-01T14:03:39.053+0800 I STORAGE  [initandlisten] 
+2019-08-01T14:03:39.053+0800 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2019-08-01T14:03:39.053+0800 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2019-08-01T14:03:39.053+0800 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=256M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+2019-08-01T14:03:39.751+0800 I STORAGE  [initandlisten] WiredTiger message [1564639419:751908][20100:0x7fd14dccab80], txn-recover: Set global recovery timestamp: 0
+2019-08-01T14:03:39.760+0800 I RECOVERY [initandlisten] WiredTiger recoveryTimestamp. Ts: Timestamp(0, 0)
+2019-08-01T14:03:39.775+0800 I CONTROL  [initandlisten] 
+2019-08-01T14:03:39.775+0800 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2019-08-01T14:03:39.775+0800 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2019-08-01T14:03:39.775+0800 I CONTROL  [initandlisten] 
+2019-08-01T14:03:39.775+0800 I CONTROL  [initandlisten] 
+2019-08-01T14:03:39.775+0800 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+2019-08-01T14:03:39.775+0800 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2019-08-01T14:03:39.775+0800 I CONTROL  [initandlisten] 
+2019-08-01T14:03:39.775+0800 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/defrag is 'always'.
+2019-08-01T14:03:39.775+0800 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2019-08-01T14:03:39.775+0800 I CONTROL  [initandlisten] 
+2019-08-01T14:03:39.775+0800 I STORAGE  [initandlisten] createCollection: admin.system.version with provided UUID: ac950cb6-cd84-4240-bc88-c2e5f9b6fdc4
+2019-08-01T14:03:39.790+0800 I COMMAND  [initandlisten] setting featureCompatibilityVersion to 4.0
+2019-08-01T14:03:39.793+0800 I STORAGE  [initandlisten] createCollection: local.startup_log with generated UUID: 16970975-479e-4fe1-b693-62fb67cdf11b
+2019-08-01T14:03:39.803+0800 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/var/lib/mongo/diagnostic.data'
+2019-08-01T14:03:39.804+0800 I NETWORK  [initandlisten] waiting for connections on port 27017
+2019-08-01T14:03:39.811+0800 I STORAGE  [LogicalSessionCacheRefresh] createCollection: config.system.sessions with generated UUID: 99eda300-406f-4f27-8459-93dd08de792a
+2019-08-01T14:03:39.825+0800 I INDEX    [LogicalSessionCacheRefresh] build index on: config.system.sessions properties: { v: 2, key: { lastUse: 1 }, name: "lsidTTLIndex", ns: "config.system.sessions", expireAfterSeconds: 1800 }
+2019-08-01T14:03:39.825+0800 I INDEX    [LogicalSessionCacheRefresh] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+2019-08-01T14:03:39.826+0800 I INDEX    [LogicalSessionCacheRefresh] build index done.  scanned 0 total records. 0 secs
+2019-08-01T14:04:11.060+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:20722 #1 (1 connection now open)
+2019-08-01T14:04:11.061+0800 I NETWORK  [conn1] received client metadata from 116.247.75.18:20722 conn1: { driver: { name: "nodejs", version: "2.2.24-1" }, os: { type: "Windows_NT", name: "win32", architecture: "ia32", version: "6.1.7601" }, platform: "Node.js v7.4.0, LE, mongodb-core: 2.1.10" }
+2019-08-01T14:04:31.307+0800 I NETWORK  [conn1] end connection 116.247.75.18:20722 (0 connections now open)
+2019-08-01T14:06:06.445+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:1354 #2 (1 connection now open)
+2019-08-01T14:06:06.453+0800 I NETWORK  [conn2] received client metadata from 116.247.75.18:1354 conn2: { driver: { name: "nodejs", version: "2.2.16" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "6.1.7601" }, platform: "Node.js v6.1.0, LE, mongodb-core: 2.1.2" }
+2019-08-01T14:06:06.529+0800 I NETWORK  [conn2] end connection 116.247.75.18:1354 (0 connections now open)
+2019-08-01T14:06:06.701+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:28606 #3 (1 connection now open)
+2019-08-01T14:06:06.702+0800 I NETWORK  [conn3] received client metadata from 116.247.75.18:28606 conn3: { driver: { name: "nodejs", version: "2.2.16" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "6.1.7601" }, platform: "Node.js v6.1.0, LE, mongodb-core: 2.1.2" }
+2019-08-01T14:06:06.990+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:25869 #4 (2 connections now open)
+2019-08-01T14:06:07.004+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:27212 #5 (3 connections now open)
+2019-08-01T14:06:07.076+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:19361 #6 (4 connections now open)
+2019-08-01T14:06:07.086+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:19448 #7 (5 connections now open)
+2019-08-01T14:07:05.990+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:10896 #8 (6 connections now open)
+2019-08-01T14:07:06.034+0800 I NETWORK  [conn8] received client metadata from 116.247.75.18:10896 conn8: { driver: { name: "mongo-csharp-driver", version: "2.9.0.0" }, os: { type: "Windows", name: "Microsoft Windows 6.1.7601 Service Pack 1", architecture: "x86_64", version: "6.1.7601" }, platform: ".NET Core 3.0.0-preview7-27912-14" }
+2019-08-01T14:07:06.615+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:16590 #9 (7 connections now open)
+2019-08-01T14:07:06.617+0800 I NETWORK  [conn9] received client metadata from 116.247.75.18:16590 conn9: { driver: { name: "mongo-csharp-driver", version: "2.9.0.0" }, os: { type: "Windows", name: "Microsoft Windows 6.1.7601 Service Pack 1", architecture: "x86_64", version: "6.1.7601" }, platform: ".NET Core 3.0.0-preview7-27912-14" }
+2019-08-01T14:07:07.025+0800 I STORAGE  [conn9] createCollection: Main.Treasure with generated UUID: 16c375a4-b516-47d9-9eb4-c86b029df2cd
+2019-08-01T14:07:14.461+0800 I STORAGE  [conn9] createCollection: Main.Poetry with generated UUID: c96864ed-a84f-4f64-9205-83feae39155a
+2019-08-01T14:07:15.296+0800 I STORAGE  [conn9] createCollection: Main.PoetryContent with generated UUID: 0a853b99-9088-4de5-9b72-a081cd589d6c
+2019-08-01T14:07:22.844+0800 I STORAGE  [conn9] createCollection: Main.Event with generated UUID: badb68a2-a8e5-4ca5-ba68-cadb5170c63c
+2019-08-01T14:07:23.999+0800 I STORAGE  [conn9] createCollection: Main.Personage with generated UUID: d6bc994b-b7ed-41f0-913a-738c956355a7
+2019-08-01T14:08:58.669+0800 I NETWORK  [conn9] end connection 116.247.75.18:16590 (6 connections now open)
+2019-08-01T14:08:58.670+0800 I NETWORK  [conn8] end connection 116.247.75.18:10896 (5 connections now open)
+2019-08-01T14:09:06.538+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:20544 #10 (6 connections now open)
+2019-08-01T14:09:06.577+0800 I NETWORK  [conn10] received client metadata from 116.247.75.18:20544 conn10: { driver: { name: "mongo-csharp-driver", version: "2.9.0.0" }, os: { type: "Windows", name: "Microsoft Windows 6.1.7601 Service Pack 1", architecture: "x86_64", version: "6.1.7601" }, platform: ".NET Core 3.0.0-preview7-27912-14" }
+2019-08-01T14:09:06.967+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:20944 #11 (7 connections now open)
+2019-08-01T14:09:06.970+0800 I NETWORK  [conn11] received client metadata from 116.247.75.18:20944 conn11: { driver: { name: "mongo-csharp-driver", version: "2.9.0.0" }, os: { type: "Windows", name: "Microsoft Windows 6.1.7601 Service Pack 1", architecture: "x86_64", version: "6.1.7601" }, platform: ".NET Core 3.0.0-preview7-27912-14" }
+2019-08-01T14:19:21.772+0800 I NETWORK  [conn10] end connection 116.247.75.18:20544 (6 connections now open)
+2019-08-01T14:19:21.772+0800 I NETWORK  [conn11] end connection 116.247.75.18:20944 (5 connections now open)
+2019-08-01T14:20:09.783+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:30867 #12 (6 connections now open)
+2019-08-01T14:20:09.821+0800 I NETWORK  [conn12] received client metadata from 116.247.75.18:30867 conn12: { driver: { name: "mongo-csharp-driver", version: "2.9.0.0" }, os: { type: "Windows", name: "Microsoft Windows 6.1.7601 Service Pack 1", architecture: "x86_64", version: "6.1.7601" }, platform: ".NET Core 3.0.0-preview7-27912-14" }
+2019-08-01T14:20:10.231+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:1061 #13 (7 connections now open)
+2019-08-01T14:20:10.234+0800 I NETWORK  [conn13] received client metadata from 116.247.75.18:1061 conn13: { driver: { name: "mongo-csharp-driver", version: "2.9.0.0" }, os: { type: "Windows", name: "Microsoft Windows 6.1.7601 Service Pack 1", architecture: "x86_64", version: "6.1.7601" }, platform: ".NET Core 3.0.0-preview7-27912-14" }
+2019-08-01T14:20:34.754+0800 I NETWORK  [conn12] end connection 116.247.75.18:30867 (6 connections now open)
+2019-08-01T14:20:34.754+0800 I NETWORK  [conn13] end connection 116.247.75.18:1061 (5 connections now open)
+2019-08-01T14:20:43.218+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:13180 #14 (6 connections now open)
+2019-08-01T14:20:43.255+0800 I NETWORK  [conn14] received client metadata from 116.247.75.18:13180 conn14: { driver: { name: "mongo-csharp-driver", version: "2.9.0.0" }, os: { type: "Windows", name: "Microsoft Windows 6.1.7601 Service Pack 1", architecture: "x86_64", version: "6.1.7601" }, platform: ".NET Core 3.0.0-preview7-27912-14" }
+2019-08-01T14:20:43.654+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:12197 #15 (7 connections now open)
+2019-08-01T14:20:43.658+0800 I NETWORK  [conn15] received client metadata from 116.247.75.18:12197 conn15: { driver: { name: "mongo-csharp-driver", version: "2.9.0.0" }, os: { type: "Windows", name: "Microsoft Windows 6.1.7601 Service Pack 1", architecture: "x86_64", version: "6.1.7601" }, platform: ".NET Core 3.0.0-preview7-27912-14" }
+2019-08-01T14:21:13.108+0800 I STORAGE  [conn15] createCollection: Main.fs.files with generated UUID: d8ea5a8c-2715-4fb5-92e9-ff6c8bb7d876
+2019-08-01T14:21:13.123+0800 I INDEX    [conn15] build index on: Main.fs.files properties: { v: 2, key: { filename: 1, uploadDate: 1 }, name: "filename_1_uploadDate_1", ns: "Main.fs.files" }
+2019-08-01T14:21:13.123+0800 I INDEX    [conn15] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+2019-08-01T14:21:13.124+0800 I INDEX    [conn15] build index done.  scanned 0 total records. 0 secs
+2019-08-01T14:21:13.157+0800 I STORAGE  [conn15] createCollection: Main.fs.chunks with generated UUID: 864c3948-8122-41df-9348-12ae7490d6ae
+2019-08-01T14:21:13.174+0800 I INDEX    [conn15] build index on: Main.fs.chunks properties: { v: 2, unique: true, key: { files_id: 1, n: 1 }, name: "files_id_1_n_1", ns: "Main.fs.chunks" }
+2019-08-01T14:21:13.174+0800 I INDEX    [conn15] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+2019-08-01T14:21:13.175+0800 I INDEX    [conn15] build index done.  scanned 0 total records. 0 secs
+2019-08-01T14:23:37.672+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:8703 #16 (8 connections now open)
+2019-08-01T14:23:37.673+0800 I NETWORK  [conn16] received client metadata from 116.247.75.18:8703 conn16: { driver: { name: "mongo-csharp-driver", version: "2.9.0.0" }, os: { type: "Windows", name: "Microsoft Windows 6.1.7601 Service Pack 1", architecture: "x86_64", version: "6.1.7601" }, platform: ".NET Core 3.0.0-preview7-27912-14" }
+2019-08-01T14:33:43.308+0800 I NETWORK  [conn16] end connection 116.247.75.18:8703 (7 connections now open)
+2019-08-01T14:34:43.319+0800 I NETWORK  [conn15] end connection 116.247.75.18:12197 (6 connections now open)
+2019-08-01T14:35:38.069+0800 I NETWORK  [conn14] end connection 116.247.75.18:13180 (5 connections now open)
+2019-08-01T14:35:51.134+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:24317 #17 (6 connections now open)
+2019-08-01T14:35:51.169+0800 I NETWORK  [conn17] received client metadata from 116.247.75.18:24317 conn17: { driver: { name: "mongo-csharp-driver", version: "2.9.0.0" }, os: { type: "Windows", name: "Microsoft Windows 6.1.7601 Service Pack 1", architecture: "x86_64", version: "6.1.7601" }, platform: ".NET Core 3.0.0-preview7-27912-14" }
+2019-08-01T14:35:51.565+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:8984 #18 (7 connections now open)
+2019-08-01T14:35:51.568+0800 I NETWORK  [conn18] received client metadata from 116.247.75.18:8984 conn18: { driver: { name: "mongo-csharp-driver", version: "2.9.0.0" }, os: { type: "Windows", name: "Microsoft Windows 6.1.7601 Service Pack 1", architecture: "x86_64", version: "6.1.7601" }, platform: ".NET Core 3.0.0-preview7-27912-14" }
+2019-08-01T14:40:14.984+0800 I NETWORK  [conn17] end connection 116.247.75.18:24317 (6 connections now open)
+2019-08-01T14:40:14.986+0800 I NETWORK  [conn18] end connection 116.247.75.18:8984 (5 connections now open)
+2019-08-01T14:40:22.808+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:8577 #19 (6 connections now open)
+2019-08-01T14:40:22.843+0800 I NETWORK  [conn19] received client metadata from 116.247.75.18:8577 conn19: { driver: { name: "mongo-csharp-driver", version: "2.9.0.0" }, os: { type: "Windows", name: "Microsoft Windows 6.1.7601 Service Pack 1", architecture: "x86_64", version: "6.1.7601" }, platform: ".NET Core 3.0.0-preview7-27912-14" }
+2019-08-01T14:40:23.306+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:15356 #20 (7 connections now open)
+2019-08-01T14:40:23.310+0800 I NETWORK  [conn20] received client metadata from 116.247.75.18:15356 conn20: { driver: { name: "mongo-csharp-driver", version: "2.9.0.0" }, os: { type: "Windows", name: "Microsoft Windows 6.1.7601 Service Pack 1", architecture: "x86_64", version: "6.1.7601" }, platform: ".NET Core 3.0.0-preview7-27912-14" }
+2019-08-01T14:42:34.884+0800 I COMMAND  [conn3] command Main.fs.chunks command: aggregate { aggregate: "fs.chunks", pipeline: [ { $sample: { size: 1000 } } ], allowDiskUse: true, maxTimeMS: 10000, cursor: { batchSize: 1000 }, $readPreference: { mode: "secondaryPreferred" }, $db: "Main" } planSummary: COLLSCAN cursorid:5352504670673372872 keysExamined:0 docsExamined:959 numYields:12 nreturned:169 reslen:16755156 locks:{ Global: { acquireCount: { r: 37 } }, Database: { acquireCount: { r: 37 } }, Collection: { acquireCount: { r: 37 } } } storage:{ data: { bytesRead: 4171210, timeReadingMicros: 18753 } } protocol:op_query 227ms
+2019-08-01T14:43:42.919+0800 I NETWORK  [conn4] end connection 116.247.75.18:25869 (6 connections now open)
+2019-08-01T14:43:46.167+0800 I NETWORK  [conn5] end connection 116.247.75.18:27212 (5 connections now open)
+2019-08-01T14:44:00.311+0800 I NETWORK  [conn6] end connection 116.247.75.18:19361 (4 connections now open)
+2019-08-01T14:44:01.329+0800 I NETWORK  [conn7] end connection 116.247.75.18:19448 (3 connections now open)
+2019-08-01T14:44:38.224+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:17722 #21 (4 connections now open)
+2019-08-01T14:44:38.229+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:9870 #22 (5 connections now open)
+2019-08-01T14:44:38.252+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:10309 #23 (6 connections now open)
+2019-08-01T14:44:38.253+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:17209 #24 (7 connections now open)
+2019-08-01T14:44:49.359+0800 I NETWORK  [conn22] end connection 116.247.75.18:9870 (6 connections now open)
+2019-08-01T14:44:49.359+0800 I NETWORK  [conn3] Error sending response to client: HostUnreachable: Connection reset by peer. Ending connection from 116.247.75.18:28606 (connection id: 3)
+2019-08-01T14:44:49.359+0800 I NETWORK  [conn3] end connection 116.247.75.18:28606 (5 connections now open)
+2019-08-01T14:44:49.361+0800 I NETWORK  [conn24] end connection 116.247.75.18:17209 (4 connections now open)
+2019-08-01T14:44:49.361+0800 I NETWORK  [conn21] end connection 116.247.75.18:17722 (3 connections now open)
+2019-08-01T14:44:49.361+0800 I NETWORK  [conn23] end connection 116.247.75.18:10309 (2 connections now open)
+2019-08-01T14:48:11.883+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:6247 #25 (3 connections now open)
+2019-08-01T14:48:11.981+0800 I NETWORK  [conn25] received client metadata from 116.247.75.18:6247 conn25: { driver: { name: "mongo-csharp-driver", version: "2.7.3.0" }, os: { type: "Windows", name: "Microsoft Windows 6.1.7601 S", architecture: "x86_64", version: "6.1.7601" }, platform: ".NET Framework 4.7.3416.0" }
+2019-08-01T14:48:12.369+0800 I NETWORK  [listener] connection accepted from 116.247.75.18:31938 #26 (4 connections now open)
+2019-08-01T14:48:12.370+0800 I NETWORK  [conn26] received client metadata from 116.247.75.18:31938 conn26: { driver: { name: "mongo-csharp-driver", version: "2.7.3.0" }, os: { type: "Windows", name: "Microsoft Windows 6.1.7601 S", architecture: "x86_64", version: "6.1.7601" }, platform: ".NET Framework 4.7.3416.0" }
+2019-08-01T14:50:32.862+0800 I NETWORK  [conn20] end connection 116.247.75.18:15356 (3 connections now open)
+2019-08-01T14:50:32.864+0800 I NETWORK  [conn19] end connection 116.247.75.18:8577 (2 connections now open)
+2019-08-01T14:54:30.587+0800 I NETWORK  [conn26] end connection 116.247.75.18:31938 (1 connection now open)
+2019-08-01T14:54:30.587+0800 I NETWORK  [conn25] end connection 116.247.75.18:6247 (0 connections now open)
