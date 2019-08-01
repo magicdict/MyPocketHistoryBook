@@ -36,6 +36,13 @@ namespace InfraStructure.Storage
             }
         }
 
+        public static void EmptyFileSystem(string databaseType)
+        {
+            _innerServer.GetDatabase(databaseType).DropCollection("fs.files");
+            _innerServer.GetDatabase(databaseType).DropCollection("fs.chunks");
+
+        }
+
         /// <summary>
         ///     保存文件
         /// </summary>
@@ -46,8 +53,8 @@ namespace InfraStructure.Storage
         public static string InsertFile(IFormFile file, string ownerId, string databaseType)
         {
             var mongofilename = ownerId + "_" + DateTime.Now.ToString("yyyyMMddHHmmss") + "_" + file.FileName;
-            var innerFileServer = _innerServer.GetDatabase(databaseType);
-            var gfs = innerFileServer.GetGridFS(new MongoGridFSSettings());
+            var FSDB = _innerServer.GetDatabase(databaseType);
+            var gfs = FSDB.GetGridFS(new MongoGridFSSettings());
             gfs.Upload(file.OpenReadStream(), mongofilename);
             return mongofilename;
         }
@@ -63,8 +70,8 @@ namespace InfraStructure.Storage
         public static string InsertFile(Stream file, string fileName, string ownerId, string databaseType)
         {
             var mongofilename = ownerId + "_" + DateTime.Now.ToString("yyyyMMddHHmmss") + "_" + fileName;
-            var innerFileServer = _innerServer.GetDatabase(databaseType);
-            var gfs = innerFileServer.GetGridFS(new MongoGridFSSettings());
+            var FSDB = _innerServer.GetDatabase(databaseType);
+            var gfs = FSDB.GetGridFS(new MongoGridFSSettings());
             gfs.Upload(file, mongofilename);
             return mongofilename;
         }
@@ -77,8 +84,8 @@ namespace InfraStructure.Storage
         /// <param name="databaseType"></param>
         public static void InsertStreamWithFixFileName(Stream stream, string filename, string databaseType)
         {
-            var innerFileServer = (MongoDatabase)_innerServer.GetDatabase(databaseType);
-            var gfs = innerFileServer.GetGridFS(new MongoGridFSSettings());
+            var FSDB = _innerServer.GetDatabase(databaseType);
+            var gfs = FSDB.GetGridFS(new MongoGridFSSettings());
             gfs.Upload(stream, filename);
         }
 
@@ -90,8 +97,8 @@ namespace InfraStructure.Storage
         /// <param name="filename"></param>
         public static void GetFile(Stream stream, string filename, string databaseType)
         {
-            var innerFileServer = _innerServer.GetDatabase(databaseType);
-            var gfs = innerFileServer.GetGridFS(new MongoGridFSSettings());
+            var FSDB = _innerServer.GetDatabase(databaseType);
+            var gfs = FSDB.GetGridFS(new MongoGridFSSettings());
             if (gfs.Exists(filename))
             {
                 gfs.Download(stream, filename);
@@ -122,10 +129,10 @@ namespace InfraStructure.Storage
         /// <param name="databaseType">数据库名称</param>
         public static void BackUpFiles(List<DbFileInfo> fileList, string path, string databaseType)
         {
-            var innerFileServer = _innerServer.GetDatabase(databaseType);
+            var FSDB = _innerServer.GetDatabase(databaseType);
             foreach (var item in fileList)
             {
-                var gfs = innerFileServer.GetGridFS(new MongoGridFSSettings());
+                var gfs = FSDB.GetGridFS(new MongoGridFSSettings());
                 gfs.Download(path + item.FileName, item.DbFileName);
             }
         }

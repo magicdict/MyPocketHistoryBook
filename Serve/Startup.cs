@@ -16,10 +16,9 @@ namespace HelloChinaApi
         public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
             Configuration = configuration;
-
             //MongoDB初始化
-            string AliyunConnectionString = @"mongodb://39.105.206.6:27017";
-            var DBStatus = MongoDbRepository.Init(new string[] { "Main", "Image" }, "Main", AliyunConnectionString);
+
+            var DBStatus = MongoDbRepository.Init(new string[] { Config.MainDBName, Config.FSDBName }, Config.MainDBName, Config.AliyunConnectionString);
             if (!DBStatus)
             {
                 System.Console.WriteLine("DB Error!!");
@@ -33,13 +32,13 @@ namespace HelloChinaApi
             InitPersonage.Init();       //人物
 
             //MongoGFS初始化
-            DBStatus = MongoStorage.Init(AliyunConnectionString);
+            DBStatus = MongoStorage.Init(Config.AliyunConnectionString);
             if (!DBStatus)
             {
                 System.Console.WriteLine("FileSystem Error!!");
                 return;
             }
-            FileMgr.Init();
+            InitFile.InitImage();
         }
 
         public IConfiguration Configuration { get; }

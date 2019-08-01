@@ -1,22 +1,19 @@
 using System.IO;
 using InfraStructure.Storage;
 
-public static class FileMgr
+public static class InitFile
 {
-
-
-    public static void Init()
+    public static void InitImage()
     {
-        var root = @"F:\HelloChinaApi\Image";
-        UploadDirect(root);
+        MongoStorage.EmptyFileSystem(Config.FSDBName);
+        UploadDirect(Config.LocalImageFileRoot);
     }
-
     static void UploadDirect(string root)
     {
         foreach (var item in Directory.GetFiles(root))
         {
             var f = new System.IO.FileInfo(item);
-            MongoStorage.InsertStreamWithFixFileName(f.OpenRead(), f.Name, "Main");
+            MongoStorage.InsertStreamWithFixFileName(f.OpenRead(), f.Name, Config.FSDBName);
         }
         foreach (var item in Directory.GetDirectories(root))
         {

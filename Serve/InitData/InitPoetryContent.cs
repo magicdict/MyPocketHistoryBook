@@ -11,10 +11,9 @@ namespace HelloChinaApi.BussinessLogic
     {
         public static void Init()
         {
-            const string connectionString = "Data Source=F:\\HelloChinaApi\\Misc\\PocketHistoryBook.sqlite;";
-            var masterConnection = new SqliteConnection(connectionString);
+            var masterConnection = new SqliteConnection(Config.LocalSqliteConnectiongString);
             masterConnection.Open();
-            using (var secondConnection = new SqliteConnection(connectionString))
+            using (var secondConnection = new SqliteConnection(Config.LocalSqliteConnectiongString))
             {
                 secondConnection.Open();
                 var queryCommand = secondConnection.CreateCommand();
