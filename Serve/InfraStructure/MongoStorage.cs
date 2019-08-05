@@ -95,14 +95,15 @@ namespace InfraStructure.Storage
         /// </summary>
         /// <param name="stream"></param>
         /// <param name="filename"></param>
-        public static void GetFile(Stream stream, string filename, string databaseType)
+        public static Stream GetFile(string filename, string databaseType)
         {
             var FSDB = _innerServer.GetDatabase(databaseType);
             var gfs = FSDB.GetGridFS(new MongoGridFSSettings());
             if (gfs.Exists(filename))
             {
-                gfs.Download(stream, filename);
+                return gfs.Open(filename, FileMode.Open);
             }
+            return null;
         }
 
 

@@ -54,6 +54,14 @@ namespace HelloChinaApi.BussinessLogic
                                     break;
                                 case "ZIMAGENAME":
                                     t.ImageName = reader.GetValue(i).ToString();
+                                    if (InitFile.ImageFileNameDict.ContainsKey(t.ImageName))
+                                    {
+                                        t.ImageName = InitFile.ImageFileNameDict[t.ImageName];
+                                    }
+                                    else
+                                    {
+                                        System.Console.WriteLine("缺失图片:" + t.ImageName);
+                                    }
                                     break;
                                 case "ZMAINWORK":
                                     t.MainWork = reader.GetValue(i).ToString();
@@ -62,7 +70,7 @@ namespace HelloChinaApi.BussinessLogic
                                     break;
                             }
                         }
-                        MongoDbRepository.InsertRec(t,sn);
+                        MongoDbRepository.InsertRec(t, sn);
                         sn++;
                     }
                 }

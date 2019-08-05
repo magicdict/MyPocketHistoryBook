@@ -14,12 +14,11 @@ namespace HelloChinaApi.Controllers
         [HttpGet("Download")]
         public FileResult Download(string filename)
         {
-            var stream = new FileStream(filename, FileMode.OpenOrCreate);
-            MongoStorage.GetFile(stream, filename, "Main");
             string fileExt = Path.GetExtension(filename);
             //获取文件的ContentType
             var provider = new FileExtensionContentTypeProvider();
             var memi = provider.Mappings[fileExt];
+            var stream = MongoStorage.GetFile(filename, Config.FSDBName);
             stream.Position = 0;    //关键语句，将流的位置重置，不然结果为空
             return File(stream, memi, filename);
         }
@@ -33,7 +32,7 @@ namespace HelloChinaApi.Controllers
         [HttpPost("Upload")]
         public ActionResult<String> Upload(IFormFile file)
         {
-            MongoStorage.InsertStreamWithFixFileName(file.OpenReadStream(), file.FileName, "Main");
+            MongoStorage.InsertStreamWithFixFileName(file.OpenReadStream(), file.FileName, Config.FSDBName);
             return file.FileName;
         }
     }
