@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using HelloChinaApi.BussinessLogic;
 using InfraStructure.DataBase;
 using Newtonsoft.Json;
+using System.Linq;
 
 namespace HelloChinaApi.Controllers
 {
@@ -10,6 +11,15 @@ namespace HelloChinaApi.Controllers
     [ApiController]
     public class TreasureController : ControllerBase
     {
+
+         [HttpGet("HelloWorld")]
+        public ActionResult<string> HelloWorld()
+        {
+            return "HelloWorld";
+        }
+
+        
+
         [HttpGet]
         public ActionResult<List<TreasureRecord>> Get()
         {
@@ -31,7 +41,8 @@ namespace HelloChinaApi.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("GetRecordCount")]
-        public ActionResult<int> GetRecordCount(){
+        public ActionResult<int> GetRecordCount()
+        {
             int cnt = MongoDbRepository.GetRecordCount<TreasureRecord>();
             return cnt;
         }
@@ -43,6 +54,18 @@ namespace HelloChinaApi.Controllers
             TreasureRecord treasure = JsonConvert.DeserializeObject(data.ToString(), typeof(TreasureRecord));
             MongoDbRepository.InsertRec(treasure);
             return treasure.Sn;
+        }
+
+
+
+        [HttpGet("GetByPageId")]
+        public ActionResult<List<TreasureRecord>> GetByPageId(int Page)
+        {
+            var list = new List<TreasureRecord>();
+            var SkipCnt = (Page - 1) * Config.PageSize;
+            //性能不好，考虑将整个数据集进行缓存，或者将简要信息和详细信息分离。
+            list = MongoDbRepository.GetRecList<TreasureRecord>().Skip(SkipCnt).Take(Config.PageSize).ToList();
+            return list;
         }
     }
 }

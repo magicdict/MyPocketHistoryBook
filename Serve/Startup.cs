@@ -17,20 +17,12 @@ namespace HelloChinaApi
         {
             Configuration = configuration;
             //MongoDB初始化
-
             var DBStatus = MongoDbRepository.Init(new string[] { Config.MainDBName, Config.FSDBName }, Config.MainDBName, Config.AliyunConnectionString);
             if (!DBStatus)
             {
                 System.Console.WriteLine("DB Error!!");
                 return;
             }
-            //启动数据
-            InitTreasure.Init();        //文物
-            InitPoetry.Init();          //诗词
-            InitPoetryContent.Init();   //诗词内容
-            InitEvent.Init();           //事件
-            InitPersonage.Init();       //人物
-
             //MongoGFS初始化
             DBStatus = MongoStorage.Init(Config.AliyunConnectionString);
             if (!DBStatus)
@@ -38,7 +30,17 @@ namespace HelloChinaApi
                 System.Console.WriteLine("FileSystem Error!!");
                 return;
             }
-            InitFile.InitImage();
+            //初始化图片
+            if (Config.IsInitData) InitFile.InitImage();
+            if (Config.IsInitData)
+            {
+                //启动数据
+                InitTreasure.Init();        //文物
+                InitPoetry.Init();          //诗词
+                InitPoetryContent.Init();   //诗词内容
+                InitEvent.Init();           //事件
+                InitPersonage.Init();       //人物
+            }
         }
 
         public IConfiguration Configuration { get; }
