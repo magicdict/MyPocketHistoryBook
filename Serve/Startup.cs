@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using InfraStructure.DataBase;
 using InfraStructure.Storage;
 using HelloChinaApi.BussinessLogic;
+using Newtonsoft.Json.Serialization;
 
 namespace HelloChinaApi
 {
@@ -50,7 +51,8 @@ namespace HelloChinaApi
         {
             services.AddMvc(options => { options.EnableEndpointRouting = false; })  //Core3.0.0 - Preview4
             .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
-            services.AddMvc().AddNewtonsoftJson();
+            //DefaultContractResolver 不进行大小写转换
+            services.AddMvc().AddNewtonsoftJson(op => op.SerializerSettings.ContractResolver = new DefaultContractResolver());  //Core3.0.0 - Preview7：不指定则 是驼峰
             services.Configure<KestrelServerOptions>(options =>
             {
                 options.AllowSynchronousIO = true;
