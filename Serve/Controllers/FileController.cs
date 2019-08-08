@@ -4,6 +4,7 @@ using System.IO;
 using InfraStructure.Storage;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.AspNetCore.Http;
+using System.Web;
 
 namespace HelloChinaApi.Controllers
 {
@@ -15,6 +16,7 @@ namespace HelloChinaApi.Controllers
         public FileResult Download(string filename)
         {
             string fileExt = Path.GetExtension(filename);
+            filename = HttpUtility.UrlDecode(filename);
             //获取文件的ContentType
             var provider = new FileExtensionContentTypeProvider();
             var memi = provider.Mappings[fileExt];

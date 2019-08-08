@@ -75,8 +75,10 @@ export class CommonFunction {
         return 0;
     };
 
-    //private webapiurl = "http://39.105.206.6:8080/api/";
-    private webapiurl = "http://localhost:5000/api/";
+    private webapiurl = "http://39.105.206.6:8080/api/";
+    //private webapiurl = "http://localhost:5000/api/";
+
+    public imageurl = "http://39.105.206.6:8080/api/download?filename=";
 
     public httpRequest<T>(serviceUrl: string): Promise<T> {
         return this.http.get(

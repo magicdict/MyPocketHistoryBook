@@ -15,6 +15,9 @@ export class Treasure implements OnInit {
     this.route.data
       .subscribe((data: { treasure: ITreasure[] }) => {
         this.treasurelist = data.treasure;
+        this.treasurelist.forEach(
+          x => x.ImageName = escape(x.ImageName)
+        );
       });
   }
 }
