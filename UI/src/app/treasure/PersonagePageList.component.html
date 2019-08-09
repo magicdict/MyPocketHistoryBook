@@ -9,7 +9,16 @@
                     名称
                 </th>
                 <th>
+                    国家
+                </th>
+                <th>
                     朝代
+                </th>
+                <th>
+                    主要功绩
+                </th>
+                <th width="500px">
+                    描述
                 </th>
                 <th>
                     图片
@@ -18,8 +27,11 @@
         </ng-template>
         <ng-template pTemplate="body" let-itemData>
             <tr [pSelectableRow]="itemData">
-                <td>{{itemData.Name}}</td>
+                <td>{{itemData.Name}} {{itemData.Alias}} </td>
+                <td>{{itemData.Nation}}</td>
                 <td>{{itemData.DetailDynasty}}</td>
+                <td>{{itemData.MainWork}}</td>
+                <td width="500px">{{itemData.Description}}</td>
                 <td>
                     <img width="100px" height="100px"
                         [src]="'http://39.105.206.6:8080/api/file/download?filename=' + itemData.ImageName">

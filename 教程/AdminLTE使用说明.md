@@ -1,4 +1,9 @@
-# AdminLT使用说明
+# AdminLTE使用说明
+
+## AdminLTE的导入
+
+在package.json下面添加如下条目：
+"admin-lte": "^2.4.15"
 
 ## 样式文件的添加
 
