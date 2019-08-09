@@ -37,7 +37,7 @@
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-itemData>
-            <tr [pSelectableRow]="itemData">
+            <tr [pSelectableRow]="itemData" (click)="editor.display = true">
                 <td>{{itemData.Name}}</td>
                 <td>{{itemData.Museum}}</td>
                 <td>{{itemData.DetailDynasty}}</td>
@@ -54,3 +54,5 @@
         </ng-template>
     </p-table>
 </div>
+
+<TreasureEdit></TreasureEdit>
