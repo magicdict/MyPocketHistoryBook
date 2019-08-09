@@ -1,21 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component/app.component';
-import { Treasure } from './treasure/treasure.component';
+import { TreasurePageListComponent } from './treasure/TreasurePageList.component';
+import { EventPageListComponent } from './treasure/EventPageList.component';
 
 //Third party component
 import { TableModule } from 'primeng/table';
+
+//服务
 import { CommonFunction } from './common';
-import { ITreasureResolver } from './resolve.service';
+import { ITreasureResolver, IEventResolver, IPersonageResolver } from './resolve.service';
+import { PersonagePageListComponent } from './treasure/PersonagePageList.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    Treasure
+    TreasurePageListComponent,
+    EventPageListComponent,
+    PersonagePageListComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +31,9 @@ import { ITreasureResolver } from './resolve.service';
   ],
   providers: [
     CommonFunction,
-    ITreasureResolver
+    ITreasureResolver,
+    IEventResolver,
+    IPersonageResolver
   ],
   bootstrap: [AppComponent]
 })

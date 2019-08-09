@@ -3,10 +3,9 @@ import { ITreasure } from '../interface/ITreasure';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'treasure',
-  templateUrl: 'treasure.component.html'
+  templateUrl: 'TreasurePageList.component.html'
 })
-export class Treasure implements OnInit {
+export class TreasurePageListComponent implements OnInit {
   constructor(private route: ActivatedRoute) {
 
   }
